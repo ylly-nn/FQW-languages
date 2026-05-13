@@ -1,0 +1,41 @@
+{
+  "topics": [
+    { "id": 1, "title": "Еда", "icon": "🍔" },
+    { "id": 2, "title": "Путешествия", "icon": "✈️" },
+    { "id": 3, "title": "Работа", "icon": "💼" }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "topicId": 1,
+      "title": "В ресторане",
+      "audio": "/audio/exLesson.mp3",
+      "questions": [
+        { "text": "Что заказал герой?", "options": ["Суп", "Салат", "Пиццу"], "answer": 2 },
+        { "text": "Сколько стоил десерт?", "options": ["5€", "3€", "7€"], "answer": 0 }
+      ]
+    },
+    {
+      "id": 2,
+      "topicId": 1,
+      "title": "Завтрак в отеле",
+      "audio": "/audio/exLesson.mp3",
+      "questions": [
+        { "text": "Что предпочёл гость?", "options": ["Кашу", "Яйца", "Тосты"], "answer": 1 }
+      ]
+    },
+    {
+      "id": 3,
+      "topicId": 2,
+      "title": "На вокзале",
+      "audio": "/audio/exLesson.mp3",
+      "questions": [
+        {
+          "text": "Куда отправляется поезд?",
+          "options": ["Лондон", "Париж", "Берлин"],
+          "answer": 0
+        }
+      ]
+    }
+  ]
+}

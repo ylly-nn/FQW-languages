@@ -37,3 +37,7 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# Custom
+public/audio/*
+!public/audio/.gitkeep
