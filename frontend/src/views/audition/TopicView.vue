@@ -3,7 +3,7 @@
   import { useRoute, useRouter } from 'vue-router'
   import BackButton from '@/components/BackButton.vue'
   import LessonList from '@/components/LessonList.vue'
-  import data from '@/data/lessons.json'
+  import data from '@/data/audition.json'
 
   const route = useRoute()
   const router = useRouter()
@@ -56,15 +56,27 @@
     <div class="top-bar">
       <BackButton to="/audition/topics" label="← Темы" />
     </div>
-    <div class="lessons-wrapper" v-if="topic">
-      <h1>{{ topic.icon }} {{ topic.title }}</h1>
-      <LessonList
-        :lessons="allLessons"
-        :completedIds="completedIds"
-        :premiumIds="premiumIds"
-        @select="selectLesson"
-        @toggle-premium="togglePremium" />
+
+    <div class="content" v-if="topic">
+      <!-- Карточка с рисунком (иконка темы) -->
+      <div class="topic-header-card">
+        <span class="topic-icon">{{ topic.icon }}</span>
+        <h1 class="topic-title">{{ topic.title }}</h1>
+      </div>
+
+      <!-- Список уроков (отдельно от карточки) -->
+      <div class="lessons-list-container">
+        <LessonList
+          v-if="allLessons.length > 0"
+          :lessons="allLessons"
+          :completedIds="completedIds"
+          :premiumIds="premiumIds"
+          @select="selectLesson"
+          @toggle-premium="togglePremium" />
+        <p v-else class="empty-message">Нет уроков для этой темы</p>
+      </div>
     </div>
+
     <div v-else class="not-found">Тема не найдена</div>
   </div>
 </template>
@@ -78,31 +90,60 @@
     flex-direction: column;
     align-items: center;
   }
+
   .top-bar {
     width: 100%;
     max-width: 1000px;
     margin-bottom: 2rem;
   }
-  .lessons-wrapper {
+
+  .content {
     width: 100%;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Карточка с рисунком */
+  .topic-header-card {
     background: white;
-    border: 1px solid rgba(88, 204, 2, 0.6);
-    border-radius: 50px;
-    padding: 3rem 2.5rem;
-    box-shadow:
-      0px 20px 40px rgba(88, 204, 2, 0.06),
-      0px 10px 20px rgba(0, 0, 0, 0.04);
-  }
-  h1 {
+    border: 1px solid rgba(88, 204, 2, 0.4);
+    border-radius: 40px;
+    padding: 2.5rem 2rem;
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    box-shadow: 0 20px 40px rgba(88, 204, 2, 0.08);
   }
+
+  .topic-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .topic-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin: 0;
+  }
+
+  /* Контейнер списка уроков */
+  .lessons-list-container {
+    background: transparent; /* список не оборачивается в карточку */
+  }
+
   .not-found {
     text-align: center;
     font-size: 1.5rem;
     color: #777;
     margin-top: 5rem;
+  }
+
+  .empty-message {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    margin-top: 3rem;
+    font-size: 1.2rem;
   }
 </style>

@@ -1,0 +1,164 @@
+{
+  "topics": [
+    { "id": 1, "title": "Еда", "icon": "🍔", "level": "A1" },
+    { "id": 2, "title": "Путешествия", "icon": "✈️", "level": "A2" },
+    { "id": 3, "title": "Работа", "icon": "💼", "level": "B1" }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "topicId": 1,
+      "title": "Фрукты и овощи",
+      "words": [
+        {
+          "word": "apple",
+          "translation": "яблоко",
+          "transcription": "ˈæp.əl",
+          "image": "https://placehold.co/200x200?text=apple",
+          "audio": "",
+          "syllables": ["ap", "ple"]
+        },
+        {
+          "word": "banana",
+          "translation": "банан",
+          "transcription": "bəˈnæn.ə",
+          "image": "https://placehold.co/200x200?text=banana",
+          "audio": "",
+          "syllables": ["ba", "na", "na"]
+        },
+        {
+          "word": "carrot",
+          "translation": "морковь",
+          "transcription": "ˈkær.ət",
+          "image": "https://placehold.co/200x200?text=carrot",
+          "audio": "",
+          "syllables": ["car", "rot"]
+        },
+        {
+          "word": "potato",
+          "translation": "картофель",
+          "transcription": "pəˈteɪ.təʊ",
+          "image": "https://placehold.co/200x200?text=potato",
+          "audio": "",
+          "syllables": ["po", "ta", "to"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "topicId": 1,
+      "title": "Мясо и рыба",
+      "words": [
+        {
+          "word": "chicken",
+          "translation": "курица",
+          "transcription": "ˈtʃɪk.ɪn",
+          "image": "https://images.meme-arsenal.com/647e7a7f3a05f94b3c3155360dd06381.jpg",
+          "audio": "",
+          "syllables": ["chick", "en"]
+        },
+        {
+          "word": "salmon",
+          "translation": "лосось",
+          "transcription": "ˈsæm.ən",
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/93/67/45/936745ad-f7db-6817-465b-7f92f3d279fb/cover.jpg/600x600bf-60.jpg",
+          "audio": "",
+          "syllables": ["salm", "on"]
+        },
+        {
+          "word": "beef",
+          "translation": "говядина",
+          "transcription": "biːf",
+          "image": "https://avatars.mds.yandex.net/i?id=d86869d0e9fdbc4e84ed83d326a924fa_l-4568063-images-thumbs&n=13",
+          "audio": "",
+          "syllables": ["beef"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "topicId": 2,
+      "title": "В аэропорту",
+      "words": [
+        {
+          "word": "passport",
+          "translation": "паспорт",
+          "transcription": "ˈpæs.pɔːt",
+          "image": "https://placehold.co/200x200?text=passport",
+          "audio": "",
+          "syllables": ["pass", "port"]
+        },
+        {
+          "word": "luggage",
+          "translation": "багаж",
+          "transcription": "ˈlʌg.ɪdʒ",
+          "image": "https://placehold.co/200x200?text=luggage",
+          "audio": "",
+          "syllables": ["lug", "gage"]
+        },
+        {
+          "word": "boarding pass",
+          "translation": "посадочный талон",
+          "transcription": "ˈbɔːr.dɪŋ pæs",
+          "image": "https://placehold.co/200x200?text=boarding+pass",
+          "audio": "",
+          "syllables": ["board", "ing", "pass"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "topicId": 2,
+      "title": "Отель",
+      "words": [
+        {
+          "word": "reservation",
+          "translation": "бронирование",
+          "transcription": "ˌrez.əˈveɪ.ʃən",
+          "image": "https://placehold.co/200x200?text=reservation",
+          "audio": "",
+          "syllables": ["res", "er", "va", "tion"]
+        },
+        {
+          "word": "check-in",
+          "translation": "регистрация",
+          "transcription": "tʃek ɪn",
+          "image": "https://placehold.co/200x200?text=check-in",
+          "audio": "",
+          "syllables": ["check", "in"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "topicId": 3,
+      "title": "Профессии",
+      "words": [
+        {
+          "word": "doctor",
+          "translation": "врач",
+          "transcription": "ˈdɒk.tər",
+          "image": "https://placehold.co/200x200?text=doctor",
+          "audio": "",
+          "syllables": ["doc", "tor"]
+        },
+        {
+          "word": "engineer",
+          "translation": "инженер",
+          "transcription": "ˌen.dʒɪˈnɪər",
+          "image": "https://placehold.co/200x200?text=engineer",
+          "audio": "",
+          "syllables": ["en", "gi", "neer"]
+        },
+        {
+          "word": "teacher",
+          "translation": "учитель",
+          "transcription": "ˈtiː.tʃər",
+          "image": "https://placehold.co/200x200?text=teacher",
+          "audio": "",
+          "syllables": ["teach", "er"]
+        }
+      ]
+    }
+  ]
+}

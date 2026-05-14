@@ -1,8 +1,8 @@
 {
   "topics": [
-    { "id": 1, "title": "Еда", "icon": "🍔" },
-    { "id": 2, "title": "Путешествия", "icon": "✈️" },
-    { "id": 3, "title": "Работа", "icon": "💼" }
+    { "id": 1, "title": "Еда", "icon": "🍔", "level": "A1" },
+    { "id": 2, "title": "Путешествия", "icon": "✈️", "level": "A2" },
+    { "id": 3, "title": "Работа", "icon": "💼", "level": "B1" }
   ],
   "lessons": [
     {

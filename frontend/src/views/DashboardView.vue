@@ -49,11 +49,13 @@
               <TaskCard
                 title="Слова"
                 icon="📚"
+                to="/vocabulary/topics"
                 description="Выучите 10 новых слов и повторите старые."
                 completed-description="Слова на сегодня выучены! Отлично!" />
               <TaskCard
                 title="Аудирование"
                 icon="🎧"
+                to="/audition/topics"
                 description="Прослушайте аудиоурок и ответьте на вопросы."
                 completed-description="Аудирование пройдено! Хорошая работа!" />
               <TaskCard

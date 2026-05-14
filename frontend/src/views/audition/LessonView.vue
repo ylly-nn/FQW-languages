@@ -3,7 +3,7 @@
   import { useRoute } from 'vue-router'
   import AudioPlayer from '@/components/AudioPlayer.vue'
   import BackButton from '@/components/BackButton.vue'
-  import data from '@/data/lessons.json'
+  import data from '@/data/audition.json'
 
   const route = useRoute()
   const lessonId = computed(() => parseInt(route.params.id))

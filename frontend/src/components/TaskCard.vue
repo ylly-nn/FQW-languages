@@ -5,7 +5,8 @@
     title: { type: String, required: true },
     description: { type: String, default: '' },
     completedDescription: { type: String, default: 'Задание выполнено!' },
-    icon: { type: String, default: '' }, // можно передать эмодзи или текст
+    icon: { type: String, default: '' },
+    to: { type: String, default: undefined }, // новый пропс для маршрута
   })
 
   const completed = ref(false)
@@ -16,25 +17,33 @@
 </script>
 
 <template>
-  <div
+  <component
+    :is="to ? 'router-link' : 'div'"
+    :to="to"
     class="task-card"
     :class="{ 'task-completed': completed }"
-    @click="toggle"
-    role="button"
-    tabindex="0"
-    @keydown.enter="toggle">
+    v-bind="
+      to
+        ? {}
+        : {
+            role: 'button',
+            tabindex: 0,
+            onClick: toggle,
+            onKeydown: (e) => e.key === 'Enter' && toggle(),
+          }
+    ">
     <div class="task-header">
       <h2 class="task-title">
         <span v-if="icon" class="task-icon">{{ icon }}</span>
         {{ title }}
       </h2>
-      <span v-if="completed" class="check-icon">✓</span>
+      <span v-if="completed && !to" class="check-icon">✓</span>
     </div>
     <p class="task-description">
-      {{ completed ? completedDescription : description }}
+      {{ completed && !to ? completedDescription : description }}
     </p>
-    <p class="task-hint">Нажмите, чтобы отметить выполнение</p>
-  </div>
+    <p v-if="!to" class="task-hint">Нажмите, чтобы отметить выполнение</p>
+  </component>
 </template>
 
 <style scoped>
@@ -52,6 +61,12 @@
     transition: all 0.3s ease;
     user-select: none;
     margin: 0 auto;
+  }
+
+  .task-card[href] {
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
 
   .task-card:hover {
