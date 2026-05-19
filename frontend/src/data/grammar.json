@@ -1,0 +1,63 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "title": "Present Simple",
+      "icon": "📘",
+      "level": "A1",
+      "theory": "Present Simple используется для выражения регулярных действий, привычек, фактов и общих истин. Утвердительная форма: подлежащее + V1 (для 3-го лица ед.ч. добавляется -s). Вопросы: Do/Does + подлежащее + V1. Отрицания: подлежащее + don't/doesn't + V1.\n\nНаречия частоты (always, usually, often, sometimes, rarely, never) ставятся перед основным глаголом.",
+      "examples": [
+        "I go to school every day.",
+        "She reads a book in the evening.",
+        "Do you like coffee?",
+        "He doesn't eat meat."
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "topicId": 1,
+      "title": "Основы Present Simple",
+      "exercises": [
+        { "type": "fill", "sentence": "He ___ (play) football on Sundays.", "answer": "plays" },
+        {
+          "type": "choose",
+          "sentence": "They ___ to the gym every week.",
+          "options": ["go", "goes", "going"],
+          "answer": 0
+        },
+        {
+          "type": "reorder",
+          "words": ["you", "Do", "coffee", "like", "?"],
+          "answer": "Do you like coffee?"
+        },
+        {
+          "type": "fill",
+          "sentence": "My sister ___ (watch) TV in the evening.",
+          "answer": "watches"
+        },
+        {
+          "type": "choose",
+          "sentence": "The sun ___ in the east.",
+          "options": ["rise", "rises", "rising"],
+          "answer": 1
+        },
+        {
+          "type": "reorder",
+          "words": ["usually", "I", "breakfast", "have", "at", "7"],
+          "answer": "I usually have breakfast at 7"
+        },
+        { "type": "fill", "sentence": "We ___ (not / eat) meat.", "answer": "don't eat" },
+        {
+          "type": "choose",
+          "sentence": "___ she like ice-cream?",
+          "options": ["Do", "Does", "Is"],
+          "answer": 1
+        },
+        { "type": "reorder", "words": ["never", "He", "late", "is"], "answer": "He is never late" },
+        { "type": "fill", "sentence": "Birds ___ (fly) south in winter.", "answer": "fly" }
+      ]
+    }
+  ]
+}

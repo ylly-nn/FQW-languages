@@ -15,6 +15,7 @@ import LanguageView from '@/views/LangSelectView.vue'
 
 //# Главная страница с заданиями
 import DashboardView from '@/views/DashboardView.vue'
+import DictionaryView from '@/views/DictionaryView.vue'
 
 //# Блок аудирования
 import AudLvlTopicsView from '@/views/audition/LvlTopicsView.vue'
@@ -26,6 +27,13 @@ import VocLvlTopicsView from '@/views/vocabulary/LvlTopicsVue.vue'
 import VocTopicView from '@/views/vocabulary/TopicVue.vue'
 import VocLessonView from '@/views/vocabulary/LessonView.vue'
 import VocTextLessonView from '@/views/vocabulary/TextLessonView.vue'
+import VocCardTextView from '@/views/vocabulary/CardTextView.vue'
+
+//# Грамматика
+import GrammarLvlTopicsView from '@/views/grammar/LvlTopicsView.vue'
+import GrammarTopicView from '@/views/grammar/TopicView.vue'
+import GrammarExercisesView from '@/views/grammar/ExercisesView.vue'
+import GrammarExerciseView from '@/views/grammar/ExerciseView.vue'
 
 //Do Блок грамматики
 
@@ -61,6 +69,11 @@ const routes = [
     path: '/dashboard',
     name: 'dashboard',
     component: DashboardView,
+  },
+  {
+    path: '/dictionary',
+    name: 'dictionary',
+    component: DictionaryView,
   },
 
   //# Блок аудирования
@@ -100,6 +113,33 @@ const routes = [
     path: '/vocabulary/lesson/:lessonId/:wordIndex/text',
     name: 'VocabularyTextLesson',
     component: VocTextLessonView,
+  },
+  {
+    path: '/vocabulary/lesson/:lessonId/cards',
+    name: 'VocabularyCardText',
+    component: VocCardTextView,
+  },
+
+  //# Грамматика
+  {
+    path: '/grammar/topics',
+    name: 'grammar-topics',
+    component: GrammarLvlTopicsView,
+  },
+  {
+    path: '/grammar/topics/:topicId',
+    name: 'grammar-topic-theory',
+    component: GrammarTopicView,
+  },
+  {
+    path: '/grammar/topics/:topicId/exercises',
+    name: 'grammar-topic-exercises',
+    component: GrammarExercisesView,
+  },
+  {
+    path: '/grammar/exercise/:topicId/:type',
+    name: 'grammar-exercise',
+    component: GrammarExerciseView,
   },
 
   //! Страница не найдена - все остальные

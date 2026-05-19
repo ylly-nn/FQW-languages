@@ -1,4 +1,3 @@
-<!-- src/views/vocabulary/TextLessonView.vue -->
 <script setup>
   import { ref, reactive, computed, onMounted, nextTick } from 'vue'
   import { useRoute, useRouter } from 'vue-router'
@@ -37,11 +36,11 @@
     const allVowelsStep =
       vowelIndices.length > 1 ? [{ type: 'allVowels', indices: [...vowelIndices] }] : []
 
-    // 3. По одной согласной (каждая согласная в случайном порядке)
-    const consonantSteps = shuffle(consonantIndices).map((idx) => ({
-      type: 'consonant',
-      indices: [idx],
-    }))
+    // // 3. По одной согласной (каждая согласная в случайном порядке)
+    // const consonantSteps = shuffle(consonantIndices).map((idx) => ({
+    //   type: 'consonant',
+    //   indices: [idx],
+    // }))
 
     // 4. По одному слогу (каждый слог в случайном порядке, с учетом повторений)
     let syllableSteps = []
@@ -64,7 +63,8 @@
     // 5. Всё слово целиком
     const allStep = { type: 'all', indices: letters.map((_, i) => i) }
 
-    return [...vowelSteps, ...allVowelsStep, ...consonantSteps, ...syllableSteps, allStep]
+    // вернуть  ...consonantSteps,
+    return [...vowelSteps, ...allVowelsStep, ...syllableSteps, allStep]
   }
   const currentStep = ref(0)
   const steps = computed(() => {
@@ -110,6 +110,26 @@
     }
   }
 
+  function focusPreviousInput(currentIndex) {
+    if (!currentStepData.value) return
+    const indices = currentStepData.value.indices
+    const currentPos = indices.indexOf(currentIndex)
+    if (currentPos === -1) return
+    // Ищем предыдущий индекс, который не заблокирован (не correct)
+    for (let j = currentPos - 1; j >= 0; j--) {
+      const prevIdx = indices[j]
+      const el = inputRefs.value[prevIdx]
+      if (el && !el.disabled) {
+        el.focus()
+        // Если в этом поле есть символ, можно его выделить (опционально)
+        if (inputValues[prevIdx]) {
+          el.select()
+        }
+        break
+      }
+    }
+  }
+
   function onInputChar(event, currentIndex) {
     const value = event.target.value
     if (value.length === 1) {
@@ -125,6 +145,19 @@
           }
         }
       }
+    }
+  }
+
+  function onKeyDown(event, idx) {
+    if (event.key === 'Backspace') {
+      const inputEl = inputRefs.value[idx]
+      if (!inputEl) return
+      // Если поле уже пустое — перемещаем фокус назад
+      if (!inputValues[idx] || inputValues[idx].length === 0) {
+        event.preventDefault()
+        focusPreviousInput(idx)
+      }
+      // Иначе даём стандартному поведению удалить символ
     }
   }
 
@@ -180,16 +213,10 @@
     if (lesson.value && nextIndex < lesson.value.words.length) {
       router.push(`/vocabulary/lesson/${lessonId.value}/${nextIndex}`)
     } else {
-      const stored = localStorage.getItem('vocabulary_completed')
-      const completed = stored ? new Set(JSON.parse(stored)) : new Set()
-      completed.add(lessonId.value)
-      localStorage.setItem('vocabulary_completed', JSON.stringify([...completed]))
-      const topicId = lesson.value?.topicId
-      if (topicId) router.push(`/vocabulary/topics/${topicId}`)
-      else router.push('/vocabulary/topics')
+      // Переход на страницу сопоставления карточек
+      router.push(`/vocabulary/lesson/${lessonId.value}/cards`)
     }
   }
-
   onMounted(resetStep)
 </script>
 
@@ -225,6 +252,7 @@
             maxlength="1"
             :disabled="fieldStatus[idx] === 'correct' || isChecking"
             @input="onInputChar($event, idx)"
+            @keydown="onKeyDown($event, idx)"
             @keyup.enter="checkAnswers" />
         </template>
         <button

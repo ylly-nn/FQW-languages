@@ -1,7 +1,9 @@
 <script setup>
   import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
   import TaskCard from '@/components/TaskCard.vue'
 
+  const router = useRouter()
   const sidebarOpen = ref(false)
 
   const toggleSidebar = () => {
@@ -10,8 +12,8 @@
 
   const menuItems = [
     { id: 'logout', label: 'Выйти', action: () => console.log('Выйти') },
-    { id: 'language', label: 'Выбор языка', action: () => console.log('Выбор языка') },
-    { id: 'dictionary', label: 'Словарь', action: () => console.log('Словарь') },
+    { id: 'language', label: 'Выбор языка', action: () => router.push('/language') },
+    { id: 'dictionary', label: 'Словарь', action: () => router.push('/dictionary') },
     { id: 'texts', label: 'Мои тексты', action: () => console.log('Мои тексты') },
     { id: 'progress', label: 'Прогресс', action: () => console.log('Прогресс') },
     { id: 'settings', label: 'Настройки', action: () => console.log('Настройки') },
@@ -61,6 +63,7 @@
               <TaskCard
                 title="Правила"
                 icon="📖"
+                to="/grammar/topics"
                 description="Изучите новое грамматическое правило и выполните упражнения."
                 completed-description="Правила изучены! Так держать!" />
             </div>
