@@ -16,6 +16,7 @@ import LanguageView from '@/views/LangSelectView.vue'
 //# Главная страница с заданиями
 import DashboardView from '@/views/DashboardView.vue'
 import DictionaryView from '@/views/DictionaryView.vue'
+import ProgressView from '@/views/ProgressView.vue'
 
 //# Блок аудирования
 import AudLvlTopicsView from '@/views/audition/LvlTopicsView.vue'
@@ -74,6 +75,11 @@ const routes = [
     path: '/dictionary',
     name: 'dictionary',
     component: DictionaryView,
+  },
+  {
+    path: '/progress',
+    name: 'progress',
+    component: ProgressView,
   },
 
   //# Блок аудирования
