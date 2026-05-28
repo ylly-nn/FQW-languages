@@ -1,0 +1,404 @@
+{
+  "topics": [
+    { "id": 1, "title": "Еда", "icon": "🍔", "level": "A1" },
+    { "id": 2, "title": "Путешествия", "icon": "✈️", "level": "A2" },
+    { "id": 3, "title": "Работа", "icon": "💼", "level": "B1" }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "topicId": 1,
+      "title": "Фрукты и овощи",
+      "words": [
+        {
+          "word": "banana",
+          "translation": "банан",
+          "transcription": "bəˈnæn.ə",
+          "image": "http://localhost:81/image/1/banana.webp",
+          "audio": "",
+          "syllables": ["ba", "na", "na"]
+        },
+        {
+          "word": "carrot",
+          "translation": "морковь",
+          "transcription": "ˈkær.ət",
+          "image": "http://localhost:81/image/1/carrot.webp",
+          "audio": "",
+          "syllables": ["car", "rot"]
+        },
+        {
+          "word": "potato",
+          "translation": "картофель",
+          "transcription": "pəˈteɪ.təʊ",
+          "image": "http://localhost:81/image/1/potato.webp",
+          "audio": "",
+          "syllables": ["po", "ta", "to"]
+        },
+        {
+          "word": "tomato",
+          "translation": "помидор",
+          "transcription": "təˈmɑː.təʊ",
+          "image": "http://localhost:81/image/1/tomato.webp",
+          "audio": "",
+          "syllables": ["to", "ma", "to"]
+        },
+        {
+          "word": "cucumber",
+          "translation": "огурец",
+          "transcription": "ˈkjuː.kʌm.bər",
+          "image": "http://localhost:81/image/1/cucumber.webp",
+          "audio": "",
+          "syllables": ["cu", "cum", "ber"]
+        },
+        {
+          "word": "onion",
+          "translation": "лук",
+          "transcription": "ˈʌn.jən",
+          "image": "http://localhost:81/image/1/onion.webp",
+          "audio": "",
+          "syllables": ["on", "ion"]
+        },
+        {
+          "word": "pepper",
+          "translation": "перец",
+          "transcription": "ˈpep.ər",
+          "image": "http://localhost:81/image/1/pepper.webp",
+          "audio": "",
+          "syllables": ["pep", "per"]
+        },
+        {
+          "word": "orange",
+          "translation": "апельсин",
+          "transcription": "ˈɒr.ɪndʒ",
+          "image": "http://localhost:81/image/1/orange.webp",
+          "audio": "",
+          "syllables": ["or", "ange"]
+        },
+        {
+          "word": "grape",
+          "translation": "виноград",
+          "transcription": "ɡreɪp",
+          "image": "http://localhost:81/image/1/grape.webp",
+          "audio": "",
+          "syllables": ["grape"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "topicId": 1,
+      "title": "Мясо и рыба",
+      "words": [
+        {
+          "word": "chicken",
+          "translation": "курица",
+          "transcription": "ˈtʃɪk.ɪn",
+          "image": "https://images.meme-arsenal.com/647e7a7f3a05f94b3c3155360dd06381.jpg",
+          "audio": "",
+          "syllables": ["chick", "en"]
+        },
+        {
+          "word": "salmon",
+          "translation": "лосось",
+          "transcription": "ˈsæm.ən",
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/93/67/45/936745ad-f7db-6817-465b-7f92f3d279fb/cover.jpg/600x600bf-60.jpg",
+          "audio": "",
+          "syllables": ["salm", "on"]
+        },
+        {
+          "word": "beef",
+          "translation": "говядина",
+          "transcription": "biːf",
+          "image": "https://avatars.mds.yandex.net/i?id=d86869d0e9fdbc4e84ed83d326a924fa_l-4568063-images-thumbs&n=13",
+          "audio": "",
+          "syllables": ["beef"]
+        },
+        {
+          "word": "lamb",
+          "translation": "баранина",
+          "transcription": "læm",
+          "image": "https://placehold.co/200x200?text=lamb",
+          "audio": "",
+          "syllables": ["lamb"]
+        },
+        {
+          "word": "tuna",
+          "translation": "тунец",
+          "transcription": "ˈtuː.nə",
+          "image": "https://placehold.co/200x200?text=tuna",
+          "audio": "",
+          "syllables": ["tu", "na"]
+        },
+        {
+          "word": "shrimp",
+          "translation": "креветка",
+          "transcription": "ʃrɪmp",
+          "image": "https://placehold.co/200x200?text=shrimp",
+          "audio": "",
+          "syllables": ["shrimp"]
+        },
+        {
+          "word": "sausage",
+          "translation": "колбаса",
+          "transcription": "ˈsɒs.ɪdʒ",
+          "image": "https://placehold.co/200x200?text=sausage",
+          "audio": "",
+          "syllables": ["saus", "age"]
+        },
+        {
+          "word": "bacon",
+          "translation": "бекон",
+          "transcription": "ˈbeɪ.kən",
+          "image": "https://placehold.co/200x200?text=bacon",
+          "audio": "",
+          "syllables": ["ba", "con"]
+        },
+        {
+          "word": "turkey",
+          "translation": "индейка",
+          "transcription": "ˈtɜː.ki",
+          "image": "https://placehold.co/200x200?text=turkey",
+          "audio": "",
+          "syllables": ["tur", "key"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "topicId": 2,
+      "title": "В аэропорту",
+      "words": [
+        {
+          "word": "luggage",
+          "translation": "багаж",
+          "transcription": "ˈlʌg.ɪdʒ",
+          "image": "https://placehold.co/200x200?text=luggage",
+          "audio": "",
+          "syllables": ["lug", "gage"]
+        },
+        {
+          "word": "boarding pass",
+          "translation": "посадочный талон",
+          "transcription": "ˈbɔːr.dɪŋ pæs",
+          "image": "https://placehold.co/200x200?text=boarding+pass",
+          "audio": "",
+          "syllables": ["board", "ing", "pass"]
+        },
+        {
+          "word": "departure",
+          "translation": "вылет",
+          "transcription": "dɪˈpɑː.tʃər",
+          "image": "https://placehold.co/200x200?text=departure",
+          "audio": "",
+          "syllables": ["de", "par", "ture"]
+        },
+        {
+          "word": "arrival",
+          "translation": "прибытие",
+          "transcription": "əˈraɪ.vəl",
+          "image": "https://placehold.co/200x200?text=arrival",
+          "audio": "",
+          "syllables": ["ar", "ri", "val"]
+        },
+        {
+          "word": "gate",
+          "translation": "выход на посадку",
+          "transcription": "ɡeɪt",
+          "image": "https://placehold.co/200x200?text=gate",
+          "audio": "",
+          "syllables": ["gate"]
+        },
+        {
+          "word": "terminal",
+          "translation": "терминал",
+          "transcription": "ˈtɜː.mɪ.nəl",
+          "image": "https://placehold.co/200x200?text=terminal",
+          "audio": "",
+          "syllables": ["ter", "mi", "nal"]
+        },
+        {
+          "word": "customs",
+          "translation": "таможня",
+          "transcription": "ˈkʌs.təmz",
+          "image": "https://placehold.co/200x200?text=customs",
+          "audio": "",
+          "syllables": ["cus", "toms"]
+        },
+        {
+          "word": "flight",
+          "translation": "рейс",
+          "transcription": "flaɪt",
+          "image": "https://placehold.co/200x200?text=flight",
+          "audio": "",
+          "syllables": ["flight"]
+        },
+        {
+          "word": "airline",
+          "translation": "авиакомпания",
+          "transcription": "ˈeə.laɪn",
+          "image": "https://placehold.co/200x200?text=airline",
+          "audio": "",
+          "syllables": ["air", "line"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "topicId": 2,
+      "title": "Отель",
+      "words": [
+        {
+          "word": "check-in",
+          "translation": "регистрация",
+          "transcription": "tʃek ɪn",
+          "image": "https://placehold.co/200x200?text=check-in",
+          "audio": "",
+          "syllables": ["check", "in"]
+        },
+        {
+          "word": "room service",
+          "translation": "обслуживание номеров",
+          "transcription": "ruːm ˈsɜː.vɪs",
+          "image": "https://placehold.co/200x200?text=room+service",
+          "audio": "",
+          "syllables": ["room", "ser", "vice"]
+        },
+        {
+          "word": "reception",
+          "translation": "стойка регистрации",
+          "transcription": "rɪˈsep.ʃən",
+          "image": "https://placehold.co/200x200?text=reception",
+          "audio": "",
+          "syllables": ["re", "cep", "tion"]
+        },
+        {
+          "word": "suite",
+          "translation": "люкс",
+          "transcription": "swiːt",
+          "image": "https://placehold.co/200x200?text=suite",
+          "audio": "",
+          "syllables": ["suite"]
+        },
+        {
+          "word": "elevator",
+          "translation": "лифт",
+          "transcription": "ˈel.ɪ.veɪ.tər",
+          "image": "https://placehold.co/200x200?text=elevator",
+          "audio": "",
+          "syllables": ["el", "e", "va", "tor"]
+        },
+        {
+          "word": "balcony",
+          "translation": "балкон",
+          "transcription": "ˈbæl.kə.ni",
+          "image": "https://placehold.co/200x200?text=balcony",
+          "audio": "",
+          "syllables": ["bal", "co", "ny"]
+        },
+        {
+          "word": "pillow",
+          "translation": "подушка",
+          "transcription": "ˈpɪl.əʊ",
+          "image": "https://placehold.co/200x200?text=pillow",
+          "audio": "",
+          "syllables": ["pil", "low"]
+        },
+        {
+          "word": "blanket",
+          "translation": "одеяло",
+          "transcription": "ˈblæŋ.kɪt",
+          "image": "https://placehold.co/200x200?text=blanket",
+          "audio": "",
+          "syllables": ["blan", "ket"]
+        },
+        {
+          "word": "check-out",
+          "translation": "выезд",
+          "transcription": "tʃek aʊt",
+          "image": "https://placehold.co/200x200?text=check-out",
+          "audio": "",
+          "syllables": ["check", "out"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "topicId": 3,
+      "title": "Профессии",
+      "words": [
+        {
+          "word": "engineer",
+          "translation": "инженер",
+          "transcription": "ˌen.dʒɪˈnɪər",
+          "image": "https://placehold.co/200x200?text=engineer",
+          "audio": "",
+          "syllables": ["en", "gi", "neer"]
+        },
+        {
+          "word": "teacher",
+          "translation": "учитель",
+          "transcription": "ˈtiː.tʃər",
+          "image": "https://placehold.co/200x200?text=teacher",
+          "audio": "",
+          "syllables": ["teach", "er"]
+        },
+        {
+          "word": "nurse",
+          "translation": "медсестра",
+          "transcription": "nɜːs",
+          "image": "https://placehold.co/200x200?text=nurse",
+          "audio": "",
+          "syllables": ["nurse"]
+        },
+        {
+          "word": "driver",
+          "translation": "водитель",
+          "transcription": "ˈdraɪ.vər",
+          "image": "https://placehold.co/200x200?text=driver",
+          "audio": "",
+          "syllables": ["dri", "ver"]
+        },
+        {
+          "word": "pilot",
+          "translation": "пилот",
+          "transcription": "ˈpaɪ.lət",
+          "image": "https://placehold.co/200x200?text=pilot",
+          "audio": "",
+          "syllables": ["pi", "lot"]
+        },
+        {
+          "word": "chef",
+          "translation": "шеф-повар",
+          "transcription": "ʃef",
+          "image": "https://placehold.co/200x200?text=chef",
+          "audio": "",
+          "syllables": ["chef"]
+        },
+        {
+          "word": "firefighter",
+          "translation": "пожарный",
+          "transcription": "ˈfaɪə.faɪ.tər",
+          "image": "https://placehold.co/200x200?text=firefighter",
+          "audio": "",
+          "syllables": ["fire", "fight", "er"]
+        },
+        {
+          "word": "lawyer",
+          "translation": "юрист",
+          "transcription": "ˈlɔɪ.ər",
+          "image": "https://placehold.co/200x200?text=lawyer",
+          "audio": "",
+          "syllables": ["law", "yer"]
+        },
+        {
+          "word": "artist",
+          "translation": "художник",
+          "transcription": "ˈɑː.tɪst",
+          "image": "https://placehold.co/200x200?text=artist",
+          "audio": "",
+          "syllables": ["ar", "tist"]
+        }
+      ]
+    }
+  ]
+}

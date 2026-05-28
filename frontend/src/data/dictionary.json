@@ -1,0 +1,61 @@
+{
+  "folders": [
+    {
+      "id": "completed",
+      "title": "Пройденные слова",
+      "words": [
+        {
+          "word": "apple",
+          "transcription": "ˈæp.əl",
+          "translation": "яблокlocalStorage.removeItem('user_dictionary')о"
+        }
+      ]
+    },
+    {
+      "id": "user",
+      "title": "Пользовательские слова",
+      "words": [
+        { "word": "dog", "transcription": "dɒɡ", "translation": "собака" },
+        { "word": "cat", "transcription": "kæt", "translation": "кошка" },
+        { "word": "house", "transcription": "haʊs", "translation": "дом" },
+        { "word": "car", "transcription": "kɑːr", "translation": "машина" },
+        { "word": "book", "transcription": "bʊk", "translation": "книга" },
+        { "word": "table", "transcription": "ˈteɪ.bəl", "translation": "стол" },
+        { "word": "chair", "transcription": "tʃeər", "translation": "стул" },
+        { "word": "window", "transcription": "ˈwɪn.dəʊ", "translation": "окно" },
+        { "word": "door", "transcription": "dɔːr", "translation": "дверь" },
+        { "word": "water", "transcription": "ˈwɔː.tər", "translation": "вода" },
+        { "word": "fire", "transcription": "faɪər", "translation": "огонь" },
+        { "word": "tree", "transcription": "triː", "translation": "дерево" },
+        { "word": "flower", "transcription": "flaʊər", "translation": "цветок" },
+        { "word": "sun", "transcription": "sʌn", "translation": "солнце" },
+        { "word": "moon", "transcription": "muːn", "translation": "луна" },
+        { "word": "star", "transcription": "stɑːr", "translation": "звезда" },
+        { "word": "street", "transcription": "striːt", "translation": "улица" },
+        { "word": "city", "transcription": "ˈsɪt.i", "translation": "город" },
+        { "word": "country", "transcription": "ˈkʌn.tri", "translation": "страна" },
+        { "word": "river", "transcription": "ˈrɪv.ər", "translation": "река" },
+        { "word": "mountain", "transcription": "ˈmaʊn.tɪn", "translation": "гора" },
+        { "word": "sea", "transcription": "siː", "translation": "море" },
+        { "word": "island", "transcription": "ˈaɪ.lənd", "translation": "остров" },
+        { "word": "bread", "transcription": "bred", "translation": "хлеб" },
+        { "word": "milk", "transcription": "mɪlk", "translation": "молоко" },
+        { "word": "cheese", "transcription": "tʃiːz", "translation": "сыр" },
+        { "word": "egg", "transcription": "eɡ", "translation": "яйцо" },
+        { "word": "rice", "transcription": "raɪs", "translation": "рис" },
+        { "word": "meat", "transcription": "miːt", "translation": "мясо" },
+        { "word": "fish", "transcription": "fɪʃ", "translation": "рыба" },
+        { "word": "fruit", "transcription": "fruːt", "translation": "фрукты" },
+        { "word": "vegetable", "transcription": "ˈvedʒ.tə.bəl", "translation": "овощ" },
+        { "word": "friend", "transcription": "frend", "translation": "друг" },
+        { "word": "family", "transcription": "ˈfæm.əl.i", "translation": "семья" },
+        { "word": "child", "transcription": "tʃaɪld", "translation": "ребёнок" },
+        { "word": "man", "transcription": "mæn", "translation": "мужчина" },
+        { "word": "woman", "transcription": "ˈwʊm.ən", "translation": "женщина" },
+        { "word": "time", "transcription": "taɪm", "translation": "время" },
+        { "word": "day", "transcription": "deɪ", "translation": "день" },
+        { "word": "night", "transcription": "naɪt", "translation": "ночь" }
+      ]
+    }
+  ]
+}
