@@ -1,11 +1,53 @@
 <script setup>
   import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
   import Input from '@/components/EmailInput.vue'
   import PasswordInput from '@/components/PasswordInput.vue'
   import BackButton from '@/components/BackButton.vue'
+  import { authAPI } from '@/api/auth'
 
+  const router = useRouter()
   const email = ref('')
   const password = ref('')
+  const errorMessage = ref('')
+
+  const handleLogin = async () => {
+    errorMessage.value = ''
+    if (!email.value || !password.value) {
+      errorMessage.value = 'Введите email и пароль'
+      return
+    }
+    try {
+      const response = await authAPI.login(email.value, password.value)
+      const { access_token, refresh_token, expires_in } = response.data
+      localStorage.setItem('access_token', access_token)
+      localStorage.setItem('refresh_token', refresh_token)
+      if (expires_in) localStorage.setItem('expires_in', expires_in)
+      router.push('/dashboard')
+    } catch (error) {
+      if (error.response) {
+        const status = error.response.status
+        switch (status) {
+          case 400:
+            errorMessage.value = 'Неверный запрос. Проверьте введённые данные.'
+            break
+          case 401:
+            errorMessage.value = 'Неверный email или пароль.'
+            break
+          case 500:
+            errorMessage.value = 'Ошибка сервера. Попробуйте позже.'
+            break
+          case 405:
+            errorMessage.value = 'Метод не поддерживается. Обратитесь к администратору.'
+            break
+          default:
+            errorMessage.value = 'Произошла ошибка. Попробуйте снова.'
+        }
+      } else {
+        errorMessage.value = 'Сетевая ошибка. Проверьте подключение к интернету.'
+      }
+    }
+  }
 </script>
 
 <template>
@@ -31,7 +73,7 @@
             <h1 class="logo">Вход</h1>
             <p class="subtitle">Войдите в свой аккаунт</p>
 
-            <form class="login-form" @submit.prevent="">
+            <form class="login-form" @submit.prevent="handleLogin">
               <Input
                 id="email"
                 v-model="email"
@@ -45,12 +87,14 @@
                 label="Пароль"
                 placeholder="••••••••" />
 
+              <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+
               <button type="submit" class="submit-button">Войти</button>
             </form>
 
             <p class="register-link">
               Нет аккаунта?
-              <a href="/register" class="link-green">Зарегистрироваться</a>
+              <router-link to="/register" class="link-green">Зарегистрироваться</router-link>
             </p>
           </div>
         </div>

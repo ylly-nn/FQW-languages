@@ -1,17 +1,20 @@
 <script setup>
   import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
   import Input from '@/components/EmailInput.vue'
   import PasswordInput from '@/components/PasswordInput.vue'
   import BackButton from '@/components/BackButton.vue'
+  import { authAPI } from '@/api/auth'
 
-  const username = ref('')
+  const router = useRouter()
+  const email = ref('')
   const password = ref('')
   const confirmPassword = ref('')
   const errorMessage = ref('')
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     errorMessage.value = ''
-    if (!username.value || !password.value || !confirmPassword.value) {
+    if (!email.value || !password.value || !confirmPassword.value) {
       errorMessage.value = 'Заполните все поля'
       return
     }
@@ -19,8 +22,19 @@
       errorMessage.value = 'Пароли не совпадают'
       return
     }
-    // Здесь будет логика отправки на сервер
-    console.log('Регистрация:', { username: username.value, password: password.value })
+    try {
+      const response = await authAPI.register(email.value, password.value)
+      // При успешной регистрации сервер возвращает 202 и { message, email }
+      console.log('Регистрация успешна:', response.data)
+      router.push({ name: 'verify-email', query: { email: email.value } })
+    } catch (error) {
+      if (error.response) {
+        // ошибка с ответом от сервера (400, 409, 500)
+        errorMessage.value = error.response.data?.error || error.response.data || 'Ошибка сервера'
+      } else {
+        errorMessage.value = 'Сетевая ошибка. Проверьте подключение.'
+      }
+    }
   }
 </script>
 
@@ -49,11 +63,11 @@
 
             <form class="login-form" @submit.prevent="handleRegister">
               <Input
-                id="username"
-                v-model="username"
-                label="Логин"
-                type="text"
-                placeholder="Ваш логин" />
+                id="email"
+                v-model="email"
+                label="Email"
+                type="email"
+                placeholder="your@email.com" />
 
               <PasswordInput
                 id="password"
@@ -74,7 +88,7 @@
 
             <p class="register-link">
               Уже есть аккаунт?
-              <a href="/login" class="link-green">Войти</a>
+              <router-link to="/login" class="link-green">Войти</router-link>
             </p>
           </div>
         </div>
