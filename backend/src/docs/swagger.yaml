@@ -97,6 +97,12 @@ definitions:
     - code
     - email
     type: object
+  language.UserLanguageResponse:
+    properties:
+      id:
+        example: 550e8400-e29b-41d4-a716-446655440000
+        type: string
+    type: object
   swagger.LogoutRequest:
     properties:
       refresh_token:
@@ -437,6 +443,43 @@ paths:
       summary: Подтверждение кода
       tags:
       - auth
+  /language:
+    get:
+      consumes:
+      - application/json
+      description: Возвращает ID записи в таблице user_languages для указанного языка.
+        Если язык не найден у пользователя, он автоматически добавляется.
+      parameters:
+      - description: Название языка (например, english)
+        in: query
+        name: language
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ID записи user_languages
+          schema:
+            $ref: '#/definitions/language.UserLanguageResponse'
+        "400":
+          description: Invalid request (отсутствует параметр language, язык не найден
+            в справочнике)
+          schema:
+            type: string
+        "401":
+          description: Unauthorized (отсутствует или недействителен токен)
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Получить или создать язык пользователя
+      tags:
+      - language
 securityDefinitions:
   BearerAuth:
     in: header

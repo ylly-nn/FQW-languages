@@ -11,6 +11,7 @@ import (
 	"src/internal/auth"
 	configPkg "src/internal/config"
 	"src/internal/db"
+	"src/internal/language"
 	"src/internal/middleware"
 	"src/internal/router"
 )
@@ -51,6 +52,10 @@ func main() {
 		VerificationTTL: jwt.VerificationTTL,
 	}
 
+	langStorage := language.NewPostgresLanguageStorage(database) // если исправили опечатку
+	langManager := language.NewLanguageManager(langStorage)
+	langHandler := language.NewHandler(langManager)
+
 	// Запуск обработчиков из пакета auth
 	userStorage := auth.NewPostgresUserStorage(database)
 	tsUserStorage := auth.NewPostgresTSUserStorage(database)
@@ -64,7 +69,7 @@ func main() {
 	authMiddleware := middleware.NewAuthMiddleware(jwt.SecretKey)
 
 	//Пути - src/internal/router/router.go
-	router := router.New(authMiddleware, authHandler)
+	router := router.New(authMiddleware, authHandler, langHandler)
 
 	// Запуск сервера
 	log.Printf("Сервер запущен на http://127.0.0.1:%s", port)

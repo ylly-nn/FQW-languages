@@ -9,10 +9,11 @@ import (
 
 	_ "src/docs"
 	"src/internal/auth"
+	"src/internal/language"
 	"src/internal/middleware"
 )
 
-func New(authMiddleware *middleware.AuthMiddleware, authHandler *auth.Handler) http.Handler {
+func New(authMiddleware *middleware.AuthMiddleware, authHandler *auth.Handler, langHandler *language.Handler) http.Handler {
 	r := chi.NewRouter()
 
 	// Глобальные middleware для всех запросов
@@ -34,5 +35,11 @@ func New(authMiddleware *middleware.AuthMiddleware, authHandler *auth.Handler) h
 		r.Post("/verify-reset-code", authHandler.VerifyResetCode)
 		r.Post("/set-password", authHandler.SetPassword)
 	})
+
+	r.Route("/language", func(r chi.Router) {
+		// Защищённый маршрут
+		r.With(authMiddleware.Authenticate).Get("/", langHandler.GetOrCreateUserLanguage)
+	})
+
 	return r
 }
