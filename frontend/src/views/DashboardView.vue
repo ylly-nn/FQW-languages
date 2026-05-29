@@ -2,6 +2,7 @@
   import { ref, onMounted, computed } from 'vue'
   import { useRouter } from 'vue-router'
   import TaskCard from '@/components/TaskCard.vue'
+  import { authAPI } from '@/api/auth'
 
   const router = useRouter()
   const sidebarOpen = ref(false)
@@ -44,8 +45,24 @@
     sidebarOpen.value = !sidebarOpen.value
   }
 
+  const handleLogout = async () => {
+    const refreshToken = localStorage.getItem('refresh_token')
+    try {
+      if (refreshToken) {
+        await authAPI.logout(refreshToken)
+      }
+    } catch (e) {
+      console.error('Ошибка при выходе:', e)
+    } finally {
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('refresh_token')
+      localStorage.removeItem('expires_in')
+      router.push('/')
+    }
+  }
+
   const menuItems = [
-    { id: 'logout', label: 'Выйти', action: () => console.log('Выйти') },
+    { id: 'logout', label: 'Выйти', action: handleLogout },
     { id: 'language', label: 'Выбор языка', action: () => router.push('/language') },
     { id: 'dictionary', label: 'Словарь', action: () => router.push('/dictionary') },
     { id: 'progress', label: 'Прогресс', action: () => router.push('/progress') },
@@ -72,7 +89,12 @@
                 v-for="item in menuItems"
                 :key="item.id"
                 class="menu-item"
-                @click="item.action">
+                @click="
+                  () => {
+                    console.log('Клик по:', item.id)
+                    item.action()
+                  }
+                ">
                 {{ item.label }}
               </button>
             </nav>
