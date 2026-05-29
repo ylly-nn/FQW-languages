@@ -8,10 +8,10 @@
       <div
         id="iw3pdlkas_0"
         class="container container--u-iw3pdlkas container--s1-iw3pdlkas container--s2-iw3pdlkas">
-        <a
+        <router-link
           id="isfns9y2c_0"
           role="button"
-          href="/login"
+          to="/login"
           data-action-element=""
           class="button button--u-isfns9y2c button--s1-isfns9y2c button--s2-isfns9y2c">
           <span
@@ -21,11 +21,11 @@
               <span>Вход</span>
             </span>
           </span>
-        </a>
-        <a
+        </router-link>
+        <router-link
           id="irpkbfpw9_0"
           role="button"
-          href="/register"
+          to="/register"
           data-action-element=""
           class="button button--u-irpkbfpw9 button--s1-irpkbfpw9 button--s2-irpkbfpw9">
           <span
@@ -35,7 +35,7 @@
               <span>Регистрация</span>
             </span>
           </span>
-        </a>
+        </router-link>
       </div>
       <div
         id="iryfzmc8c_0"
