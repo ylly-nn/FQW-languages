@@ -96,6 +96,9 @@
               Нет аккаунта?
               <router-link to="/register" class="link-green">Зарегистрироваться</router-link>
             </p>
+            <p class="forgot-link">
+              <router-link to="/password-recovery" class="link-green">Забыли пароль?</router-link>
+            </p>
           </div>
         </div>
       </div>
@@ -261,5 +264,10 @@
 
   .link-green:hover {
     color: #3d8b01;
+  }
+
+  .forgot-link {
+    margin-top: 1rem;
+    font-size: 0.95rem;
   }
 </style>

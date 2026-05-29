@@ -24,12 +24,20 @@
     }
     try {
       const response = await authAPI.register(email.value, password.value)
-      // При успешной регистрации сервер возвращает 202 и { message, email }
       console.log('Регистрация успешна:', response.data)
+
+      // Сохраняем email и пароль временно для страницы подтверждения
+      localStorage.setItem(
+        'pendingVerification',
+        JSON.stringify({
+          email: email.value,
+          password: password.value,
+        }),
+      )
+
       router.push({ name: 'verify-email', query: { email: email.value } })
     } catch (error) {
       if (error.response) {
-        // ошибка с ответом от сервера (400, 409, 500)
         errorMessage.value = error.response.data?.error || error.response.data || 'Ошибка сервера'
       } else {
         errorMessage.value = 'Сетевая ошибка. Проверьте подключение.'
