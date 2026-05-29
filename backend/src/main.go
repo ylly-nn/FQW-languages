@@ -67,7 +67,7 @@ func main() {
 	router := router.New(authMiddleware, authHandler)
 
 	// Запуск сервера
-	log.Printf("Сервер запущен на http://localhost:%s", port)
+	log.Printf("Сервер запущен на http://127.0.0.1:%s", port)
 	log.Fatal(http.ListenAndServe(":"+port, router))
 
 }
